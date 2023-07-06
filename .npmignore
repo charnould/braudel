@@ -1,0 +1,6 @@
+__test__
+.github
+.gitignore
+node_modules/
+UPDATES.md
+README.md
