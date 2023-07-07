@@ -114,7 +114,7 @@ export const group_by = (commits) => {
 //
 //
 export const get_week = (date) => {
-  const current_date = new Date();
+  const current_date = new Date(date);
   const start_date = new Date(current_date.getFullYear(), 0, 1);
   const days = Math.floor((current_date - start_date) / (24 * 60 * 60 * 1000));
   const week_number = Math.ceil(days / 7);
