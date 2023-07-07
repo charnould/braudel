@@ -17,7 +17,7 @@
     "git log",
     "GitHub"
   ],
-  "version": "0.0.14",
+  "version": "0.0.15",
   "type": "module",
   "bin": "./index.js",
   "―――――――――――――――": "",

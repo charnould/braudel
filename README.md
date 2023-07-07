@@ -31,7 +31,7 @@ _Braudel works (best) if commits follow [conventional commits](https://www.conve
 
 ### Add a `news` to your `UPDATES.md`
 
-1. `npx braudel --news "A Headline" --message "Some content"`  
+1. `npx braudel@latest --news "A Headline" --message "Some content"`  
    It will create an empty commit with above headline and content
 
 ## Demo
