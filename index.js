@@ -15,7 +15,7 @@ import { parse_logs } from "./helpers/parse.js";
 export const run_braudel = async () => {
   try {
     // Load config
-    const config = { gh: null, group: "day" };
+    const config = { gh: null, group: null };
 
     const {
       values: { gh, group, news, message },
@@ -29,7 +29,7 @@ export const run_braudel = async () => {
     });
 
     config.gh = gh;
-    config.group = group;
+    config.group = group || "day";
     console.log("1️⃣  Configured");
 
     if (news !== undefined) {

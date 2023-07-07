@@ -19,8 +19,8 @@ export const transform = (commits, config) => {
     commit.order = assign_order(commit.commit);
   }
 
+  commits = group_by(commits);
   sort(commits);
-
   return commits;
 };
 
@@ -36,6 +36,7 @@ export const group = (d, config) => {
     if (config.group === "day") return d.substring(0, 10);
     if (config.group === "month") return d.substring(0, 7);
     if (config.group === "year") return d.substring(0, 4);
+    if (config.group === "week") return get_week(d);
     return;
   }
 };
@@ -48,8 +49,8 @@ export const group = (d, config) => {
 //
 export const sort = (array) =>
   array.sort((a, b) => {
-    if (a.order < b.order) return -1;
-    if (a.order > b.order) return 1;
+    if (b.group < a.group) return -1;
+    if (b.group > a.group) return 1;
     return 0;
   });
 
@@ -74,4 +75,56 @@ export const assign_order = (string) => {
   if (string.startsWith("chore")) return "k";
   if (string.startsWith("revert")) return "l";
   else return "m";
+};
+
+//
+//
+//
+//
+//
+//
+export const group_by = (commits) => {
+  // a set of all possible groups
+  const groups = new Set();
+  for (const commit of commits) {
+    groups.add(commit.group);
+  }
+
+  const data = [];
+
+  // for each group, build the right object
+  for (const group of groups) {
+    // keep only corresponding commits
+    const c = commits.filter((c) => c.group === group);
+
+    // sort commits by `order`
+    c.sort((a, b) => {
+      if (a.order < b.order) return -1;
+      if (a.order > b.order) return 1;
+      return 0;
+    });
+
+    // push data
+    data.push({
+      group: group,
+      commits: c,
+    });
+  }
+
+  return data;
+};
+
+//
+//
+//
+//
+//
+//
+export const get_week = (date) => {
+  const current_date = new Date();
+  const start_date = new Date(current_date.getFullYear(), 0, 1);
+  const days = Math.floor((current_date - start_date) / (24 * 60 * 60 * 1000));
+  const week_number = Math.ceil(days / 7);
+
+  return date.substring(0, 5) + "W" + week_number;
 };

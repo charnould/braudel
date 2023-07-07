@@ -5,9 +5,18 @@ All notable updates to this project will be documented in this file.
 
 ${data
   .map(
+    (log) => `
+### ${log.group}
+
+${log.commits
+  .map(
     (
       log,
     ) => `- [\`${log.hash}\`](https://www.github.com/${config.gh}/commit/${log.hash}) — **${log.type}** ${log.message} by **${log.username}**
+`,
+  )
+  .join("")}
+
 `,
   )
   .join("")}
