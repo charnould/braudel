@@ -5,6 +5,9 @@ All notable updates to this project will be documented in this file.
 ### 2023-07-07
 
 - [`6313274`](https://www.github.com/charnould/braudel/commit/6313274) — **feat:** add --group flag by **charnould**
+- [`cc22936`](https://www.github.com/charnould/braudel/commit/cc22936) — **fix:** get_week wasn't using the right date instance by **charnould**
+- [`c498d68`](https://www.github.com/charnould/braudel/commit/c498d68) — **doc:** add @latest to always run the last version by **charnould**
+- [`b28f3b1`](https://www.github.com/charnould/braudel/commit/b28f3b1) — **doc:** update UPDATES.md by **charnould**
 - [`1eb6f6b`](https://www.github.com/charnould/braudel/commit/1eb6f6b) — **refactor:** do some cleaning by **charnould**
 - [`250901c`](https://www.github.com/charnould/braudel/commit/250901c) — **chore:** bump version by **charnould**
 
