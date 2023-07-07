@@ -5,14 +5,14 @@ All notable updates to this project will be documented in this file.
 
 ${data
   .map(
-    (log) => `
-### ${log.group}
+    (d) => `
+### ${d.group}
 
-${log.commits
+${d.commits
   .map(
     (
-      log,
-    ) => `- [\`${log.hash}\`](https://www.github.com/${config.gh}/commit/${log.hash}) — **${log.type}** ${log.message} by **${log.username}**
+      c,
+    ) => `- [\`${c.hash}\`](https://www.github.com/${config.gh}/commit/${c.hash}) — **${c.type}** ${c.message} by **${c.username}**
 `,
   )
   .join("")}

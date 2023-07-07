@@ -20,7 +20,13 @@ export const transform = (commits, config) => {
   }
 
   commits = group_by(commits);
-  sort(commits);
+
+  commits.sort((a, b) => {
+    if (b.group < a.group) return -1;
+    if (b.group > a.group) return 1;
+    return 0;
+  });
+
   return commits;
 };
 
@@ -40,19 +46,6 @@ export const group = (d, config) => {
     return;
   }
 };
-
-//
-//
-//
-//
-//
-//
-export const sort = (array) =>
-  array.sort((a, b) => {
-    if (b.group < a.group) return -1;
-    if (b.group > a.group) return 1;
-    return 0;
-  });
 
 //
 //
