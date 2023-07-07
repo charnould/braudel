@@ -2,6 +2,11 @@
   "name": "braudel",
   "author": "Charles-Henri Arnould <charnould@icloud.com>",
   "description": "A `git log` Changelog & New contributors Generator",
+  "homepage": "https://github.com/charnould/braudel#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charnould/braudel.git"
+  },
   "license": "MIT",
   "keywords": [
     "changelog",
@@ -12,7 +17,7 @@
     "git log",
     "GitHub"
   ],
-  "version": "0.0.13",
+  "version": "0.0.14",
   "type": "module",
   "bin": "./index.js",
   "―――――――――――――――": "",
