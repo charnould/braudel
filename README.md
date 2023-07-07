@@ -25,7 +25,7 @@ _Braudel works (best) if commits follow [conventional commits](https://www.conve
 ### Generate an `UPDATES.md`
 
 1. Use `git` as usual and whenever you feel it's the right moment:
-2. `npx braudel --gh "{username}/{repo}"` (e.g. `charnould/braudel`)  
+2. `npx braudel@latest --gh "{username}/{repo}"` (e.g. `charnould/braudel`)  
    You can add a `--group` flag (`day`|`week`|`month`|`year`)
 3. It will output `UPDATES.md` in your root directory.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// node index.js --gh charnould/braudel --group day --news "a headlines" --message "some content"
+// node index.js --gh charnould/braudel --group day
 // node index.js --news "A Headline" --message "Some content"
 // node index.js --news "[A Headline](htts://www.google.com)" --message "Some content"
 
